@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Reservation Room</title>
+    <meta name="author" content="Adtile">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/room.css">
+    <script src="js/responsive-nav.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-text">
+            <div class = "logo"><img src="../img/oldwell.png" alt="Old well Logo"></div>
+        </div>
+        <nav class="nav-collapse">
+            <ul>
+                <li class="menu-item"><a href="index.html" data-scroll>home</a></li>
+                <li class="menu-item"><a href="aboutus.html" data-scroll>about us</a></li>
+                <li class="menu-item"><a href="room.html" data-scroll>reserve</a></li>
+                <li class="menu-item"><a href="tutor.html" data-scroll>tutor</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+    <div class="image-wrapper">
+      <img src="/imagesForReservation/pictureOfDavisLibrary.jpg" alt="Davis Library"> <div class="image-library-name">Davis Library</div>
+      <div class="image-description">
+        <p>Davis Library Description</p>
+        <ul>
+          <li>Davis Library is UNC-Chapel Hills main research library, located near The Pit and opened in 1984.</li>
+          <li>Named after Walter Royal Davis, it houses over 3.5 million volumes in the humanities, social sciences, business, and foreign languages.</li>
+          <li>The eight-story building offers quiet study areas, group study rooms, the Music Library, and the Epigraphy Room.</li>
+          <li>Equipped with public computers, instructional labs, and extensive digital resources.</li>
+          <li>Accessibility services include assistive technologies and book retrieval.</li>
+          <li>Open late most days, Davis Library is a vital hub for study, research, and collaboration at UNC.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="image-wrapper">
+      <img src="/imagesForReservation/pictureOfTheUL.jpg" alt="Undergraduate Library"> <div class="image-library-name">Undergraduate Library</div>
+      <div class="image-description">
+        <p>Undergraduate Library Description</p>
+        <ul>
+          <li>The R.B. House Undergraduate Library at UNC-Chapel Hill opened in 1968 to support undergraduate learning.</li>
+          <li>Located near The Pit and Wilson Library, it was the first on campus to allow direct access to the stacks.</li>
+          <li>It features a focused book collection, popular reading materials, and a large media collection.</li>
+          <li>The library provides group study rooms, quiet study spaces, public computers, and digital resources.</li>
+          <li>Accessibility services include assistive technologies and accessible entrances.</li>
+          <li>Open most days from 8:00 AM to 10:00 PM, it’s a key space for study, research, and collaboration for undergraduates.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="image-wrapper">
+      <img src="/imagesForReservation/pictureOfWilsonLibrary.jpg" alt="Wilson Library"> <div class="image-library-name">Wilson Library</div>
+      <div class="image-description">
+        <p>Wilson Library Description</p>
+        <ul>
+          <li>Wilson Library is UNC-Chapel Hill’s main special collections library, located on Polk Place.</li>
+          <li>Opened in 1929 and named after librarian Louis Round Wilson.</li>
+          <li>Originally served as the university’s main library before Davis Library was built.</li>
+          <li>Houses five major research collections.
+          </li>
+          <li>Features the grand Fearrington Reading Room for research and study.</li>
+          <li>Hosts exhibitions, lectures, and public programs throughout the year.</li>
+          <li>Open to students, scholars, and the public for rare and archival research.</li>
+        </ul>
+      </div>
+    </div>
+    </section>
+
+    <section class="reservation-form-section">
+      <h2>Reserve a Study Room</h2>
+      <form id="reservation-form">
+          <div class="form-group">
+              <label for="library-select">Select a Library:</label>
+              <select id="library-select" name="library" required>
+                  <option value="">--Select a Library--</option>
+                  <option value="davis">Davis Library</option>
+                  <option value="undergraduate">Undergraduate Library</option>
+                  <option value="wilson">Wilson Library</option>
+              </select>
+          </div>
+  
+          <div class="form-group" id="room-select-group" style="display: none;">
+              <label for="room-select">Select a Room:</label>
+              <select id="room-select" name="room">
+                  <option value="">--Select a Room--</option>
+                  <option value="room1">Room 101</option>
+                  <option value="room2">Room 102</option>
+                  <option value="room3">Room 201</option>
+                  </select>
+          </div>
+  
+          <div class="form-group">
+              <label for="date">Date:</label>
+              <input type="date" id="date" name="date" required>
+          </div>
+  
+          <div class="form-group">
+              <label for="time-select">Select a Time:</label>
+              <input type="time" id="time-select" name="time" required>
+          </div>
+  
+           <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required>
+          </div>
+  
+  
+          <button type="submit">Reserve</button>
+      </form>
+  </section>
+
+  <footer>
+    <p>©2025 Tar Heel Study Hub</p>
+    
+  </footer>
+
+    <script src="js/fastclick.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/fixed-responsive-nav.js"></script> <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          const librarySelect = document.getElementById('library-select');
+          const roomSelectGroup = document.getElementById('room-select-group');
+          const roomSelect = document.getElementById('room-select');
+  
+          librarySelect.addEventListener('change', function() {
+              if (this.value === 'davis') {
+                  roomSelectGroup.style.display = 'flex';
+                  roomSelect.setAttribute('required', 'required'); 
+              } else {
+                  roomSelectGroup.style.display = 'none'; 
+                  roomSelect.removeAttribute('required'); 
+                  roomSelect.value = ""; 
+              }
+          });
+      });
+      </script>
+</body>
+</html>
