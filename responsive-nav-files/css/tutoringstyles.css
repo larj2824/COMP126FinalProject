@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: "Playfair Display", sans-serif;
+  font-family: "Playfair Display", Verdana, Geneva, Tahoma, sans-serif;
 }
 
 * {
@@ -21,7 +21,6 @@ body {
   height: auto;
   display: block;
 }
-
 
 
 @font-face {
@@ -177,6 +176,11 @@ h1{
 p{
   font-family: serif;
   font-size: 18pt;
+}
+
+
+.photocredit{
+  font-size: 7pt;
 }
 
 .bold{
